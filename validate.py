@@ -1,12 +1,22 @@
 def validate(valid_array,data_for_validation):
-    if data_for_validation not in valid_array:
+    '''
+    thus function checks all the keys in data_for_validation are present in valid_array
+    :param valid_array: array of keys
+    :param data_for_validation: json object
+    :return: true or flase
+    '''
+    arrkey = []
+    arrkey = data_for_validation.keys()
+    count =0
+    for j in range(len(data_for_validation)):
+        for i in range(len(valid_array)):
+            if arrkey[j] == valid_array[i]:
+                count += 1
+                print arrkey[j]
+    if count==len(valid_array):
+        return True
+    else:
         return False
-    elif "email" not in valid_array:
-        return False
-    elif "password" not in valid_array:
-       return False
-
-    return True
 
 if __name__ == '__main__':
 
@@ -15,8 +25,7 @@ if __name__ == '__main__':
         {"name":"spoo",
          "email":"spoo@gmail.com",
          "password":"xyz"
-         }
-    )
+         })
     print (validate(valid_array,data_for_validation))
 
 
