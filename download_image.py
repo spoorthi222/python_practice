@@ -5,9 +5,10 @@ def download_images(list):
     :param list:  it is a list of urls
     :return: nothing
     '''
+    str =["python1","python2","python3"]
     for i in range(len(list)):
         r= requests.get(list[i])
-        with open ("python_logo.jpg","wb") as f:
+        with open (str[i]+".jpg","wb") as f:
             f.write(r.content)
 
 if __name__ == '__main__':
