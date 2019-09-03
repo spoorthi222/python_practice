@@ -8,8 +8,17 @@ def prime_num():
     q = num /6
     r = num % 6
     if num == 6*q +r :
-        if (r==1) | (r == 5) :
+        if (r == 5) :
             print "Prime number"
+        elif (r==1) :
+            for i in range(2,num):
+                if num%i == 0 :
+                    print "not a prime number "
+                    found =1
+                    break
+            if (found !=1 ):
+                 print "prime number"
+
         else:
             print "Not a prime number"
 
